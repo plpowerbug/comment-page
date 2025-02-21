@@ -26,6 +26,16 @@ body {
   .comment-content {
     font-size: 16px;
     margin-bottom: 5px;
+    width: 100%;
+
+    border-radius: 8px;
+    padding: 24px;
+    background-color: white;
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    grid-template-rows: repeat(2, auto);
+
+
   }
   
   .comment-info {
@@ -46,13 +56,17 @@ body {
   }
   
   .comment-actions button.edit {
-    background-color: #4CAF50;
-    color: white;
+    margin-left: 24px;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+    color: #5357B6;
   }
   
   .comment-actions button.delete {
-    background-color: #f44336;
-    color: white;
+    background-color: #ffffff;
+    color: rgb(255, 0, 0);
+
   }
   
   .add-comment-form {
