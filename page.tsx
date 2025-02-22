@@ -32,7 +32,7 @@ function App() {
         id: Date.now(), // 使用时间戳作为唯一 ID
         content: newComment,
         createdAt: new Date().toLocaleString(),
-        user_name: ''
+        user_name: 'you'
       };
       setComments([...comments, newCommentObj]);
       setNewComment('');
@@ -65,6 +65,7 @@ function App() {
     <div className="container">
       <h1>Application Comment</h1>
       <div id="comments">
+        
         {comments.map((comment) => (
           <div key={comment.id} className="comment-card">
             {editingCommentId === comment.id ? (
@@ -77,9 +78,11 @@ function App() {
               </div>
             ) : (
               <div>
-                <div className="user-name">{comment.user_name}</div>
+                <div className ="comment-container">
+                  <div className="user-name">{comment.user_name}</div>
+                  <div className="comment-info">Created At: {comment.createdAt}</div>
+                </div>
                 <div className="comment-content">{comment.content}</div>
-                <div className="comment-info">Created At: {comment.createdAt}</div>
                 <div className="comment-actions">
                   <button
                     className="edit"
@@ -100,7 +103,6 @@ function App() {
         ))}
       </div>
       <div className="add-comment-form">
-        <h2>Add Your Comment</h2>
         <textarea
           id="new-comment"
           placeholder="Enter your comment here..."

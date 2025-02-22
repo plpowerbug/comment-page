@@ -8,34 +8,41 @@ body {
   .container {
     max-width: 800px;
     margin: 0 auto;
-    background: #fff;
     padding: 20px;
     border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    flex-direction: column;
+    row-gap: 50px;
   }
   
   .comment-card {
-    border-bottom: 1px solid #ddd;
-    padding: 10px 0;
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    margin-bottom: 20px; /* Increase space between comment cards */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    
   }
-  
+  .comment-container {
+    grid-area: details;
+    display: flex;
+    align-items: center;
+    column-gap: 16px;
+  }
   .comment-card:last-child {
     border-bottom: none;
   }
-  
-  .comment-content {
+  .user-name{
     font-size: 16px;
-    margin-bottom: 5px;
-    width: 100%;
-
-    border-radius: 8px;
-    padding: 24px;
-    background-color: white;
-    display: grid;
-    grid-template-columns: repeat(3, auto);
-    grid-template-rows: repeat(2, auto);
-
-
+    font-weight: 500;
+    color: #334253;
+  }
+  .comment-content {
+    grid-area: content;
+    font-size: 16px;
+    line-height: 24px;
+    color: #67727E;
   }
   
   .comment-info {
@@ -45,14 +52,14 @@ body {
   
   .comment-actions {
     margin-top: 10px;
+    justify-self: flex-end;
   }
   
   .comment-actions button {
-    margin-right: 10px;
     padding: 5px 10px;
     border: none;
-    border-radius: 4px;
     cursor: pointer;
+    grid-area: button;
   }
   
   .comment-actions button.edit {
@@ -70,23 +77,52 @@ body {
   }
   
   .add-comment-form {
-    margin-top: 20px;
+    width: 700px;
+    background-color: white;
+    border-radius: 8px;
+    padding: 24px;
+    display: flex;
+    justify-content: stretch;
+    column-gap: 16px;
+    max-width: 800px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   }
   
   .add-comment-form textarea {
-    width: 100%;
-    padding: 10px;
-    border-radius: 4px;
-    border: 1px solid #ddd;
-    resize: vertical;
+  
+    border: 1px solid #E9EBF0;
+    padding: 12px;
+    border-radius: 8px;
+    background-color: white;
+    font-size: 16px;
+    line-height: 24px;
+    color: #334253;
+    flex: ;
+
   }
+  .add-comment-form textarea::placeholder {
+    color: #67727E;
+}
+  .add-comment-form textarea:focus {
+    border: 1px solid #5357B6;
+    outline: none;
+}
   
   .add-comment-form button {
-    margin-top: 10px;
-    padding: 10px 20px;
-    background-color: #008CBA;
+    width: 104px;
+    height: 48px;
+    border-radius: 8px;
+    padding: 12px;
     color: white;
+    background-color: #5357B6;
     border: none;
-    border-radius: 4px;
     cursor: pointer;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+    outline: none;
+    text-transform: uppercase;
   }
+  .add-comment-form button:hover {
+    background-color: #C5C6EF;
+}
